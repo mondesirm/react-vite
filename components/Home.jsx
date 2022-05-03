@@ -6,7 +6,9 @@ import React, { Suspense, useState } from 'react';
 
 const Home = () => {
 	const Users = React.lazy(() => import('./Users'));
+	const Posts = React.lazy(() => import('./Posts'));
 	const Photos = React.lazy(() => import('./Photos'));
+	const Albums = React.lazy(() => import('./Albums'));
 
 	const [count, setCount] = useState(0);
 	const [step, setStep] = useState(1);
@@ -30,16 +32,18 @@ const Home = () => {
 			<div className="mt-4">
 				<select name="data" id="data" onChange={(event) => setData(event.target.value)}>
 					<option value="Users">Users</option>
-					{/* <option value="posts">Posts</option> */}
+					<option value="Posts">Posts</option>
 					<option value="Photos">Photos</option>
-					{/* <option value="albums">Albums</option> */}
+					<option value="Albums">Albums</option>
 				</select>
 			</div>
 
 			<Suspense fallback={<div>Loading...</div>}>
 				{/* Call component based on selected option */}
 				{data === 'Users' && <Users />}
+				{data === 'Posts' && <Posts />}
 				{data === 'Photos' && <Photos />}
+				{data === 'Albums' && <Albums />}
 			</Suspense>
 		</div>
 	);

@@ -19,7 +19,7 @@ const Users = () => {
 		<div className="container mx-auto mt-4">
 			<h1 className="font-bold text-lg text-center my-4">{"Users • React Vite"}</h1>
 
-			<table className="text-center">
+			<table className="mx-auto text-center">
 				<thead>
 					<tr className="font-small text-decoration-none">
 						<td className="text-decoration-underline">ID</td>

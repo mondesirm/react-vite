@@ -1,12 +1,10 @@
-/** @format */
-
 import React, { Fragment } from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
 import Users from './Users';
-// import Posts from './Posts';
+import Posts from './Posts';
 import Photos from './Photos';
-// import Albums from './Albums';
+import Albums from './Albums';
 
 class App extends React.Component {
 	constructor(props) {
@@ -20,9 +18,9 @@ class App extends React.Component {
 		const routes = {
 			'/': <Home />,
 			'/users': <Users />,
-			// '/posts': <Posts />,
+			'/posts': <Posts />,
 			'/photos': <Photos />,
-			// '/albums': <Albums />
+			'/albums': <Albums />
 		};
 
 		// TODO Error404.js

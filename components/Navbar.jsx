@@ -33,9 +33,8 @@ class Navbar extends React.Component {
 							</li>
 
 							<li className="nav-item d-flex">
-								<a href="javascript:void(0)" onClick={() => this.cacheRoute()} className="disabled position-relative nav-link btn-outline-none text-decoration-none">
+								<a href="javascript:void(0)" onClick={() => this.cacheRoute('Posts', '/posts')} className="nav-link btn-outline-none text-decoration-none">
 									Posts
-									<span className="position-absolute start-100 translate-middle badge text-danger">Soon!</span>
 								</a>
 							</li>
 
@@ -46,13 +45,37 @@ class Navbar extends React.Component {
 							</li>
 
 							<li className="nav-item d-flex">
-								<a href="javascript:void(0)" onClick={() => this.cacheRoute()} className="disabled position-relative nav-link btn-outline-none text-decoration-none">
+								<a href="javascript:void(0)" onClick={() => this.cacheRoute('Albums', '/albums')} className="nav-link btn-outline-none text-decoration-none">
 									Albums
+								</a>
+							</li>
+
+							<li className="nav-item d-flex">
+								<a href="javascript:void(0)" onClick={() => this.cacheRoute()} className="disabled position-relative nav-link btn-outline-none text-decoration-none">
+									Comments
+									<span className="position-absolute start-100 translate-middle badge text-danger">Soon!</span>
+								</a>
+							</li>
+
+							<li className="nav-item d-flex">
+								<a href="javascript:void(0)" onClick={() => this.cacheRoute()} className="disabled position-relative nav-link btn-outline-none text-decoration-none">
+									ToDos
 									<span className="position-absolute start-100 translate-middle badge text-danger">Soon!</span>
 								</a>
 							</li>
 						</ul>
 					</div>
+
+					<button className="btn btn-primary position-absolute top-0 end-0 mt-2 me-4 me-lg-5 shadow-none" style={{ transition: "all .2s ease" }}>
+						<div className="d-flex justify-content-center" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Get started
+						</div>
+
+						<ul className="dropdown-menu p-0 align-items-center" style={{ left: 'auto', right: 0 }} aria-labelledby="navbarDropdown">
+							<li><a href="javascript:void(0)" onClick={() => this.cacheRoute()} className="dropdown-item btn-outline-light" id="login">Login</a></li>
+							<li><a href="javascript:void(0)" onClick={() => this.cacheRoute()} className="dropdown-item btn-outline-light" id="register">Register</a></li>
+						</ul>
+					</button>
 				</div>
 			</nav>
 		);
