@@ -1,16 +1,38 @@
 /** @format */
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { Fragment } from 'react';
+import Navbar from './Navbar';
+import Home from './Home';
+import Users from './Users';
+// import Posts from './Posts';
+import Photos from './Photos';
+// import Albums from './Albums';
 
 class App extends React.Component {
-	// const Crepe = 'TITLE';
+	constructor(props) {
+		super(props);
+	}
+	
 	
 	render() {
+		const route = window.location.pathname;
+
+		const routes = {
+			'/': <Home />,
+			'/users': <Users />,
+			// '/posts': <Posts />,
+			'/photos': <Photos />,
+			// '/albums': <Albums />
+		};
+
+		// TODO Error404.js
 		return (
-			<div>
-				<h1>Hello, world!</h1>
-			</div>
+			<Fragment>
+				<Navbar />
+				{routes[route] || <Home />}
+			</Fragment>
 		);
 	}
 }
+
+export default App;
